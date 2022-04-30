@@ -9,6 +9,8 @@ set $right l
 
 # Your preferred terminal emulators
 set $term-float kitty
+set $term-light sakura
+
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -202,7 +204,6 @@ bindsym $mod+r mode "resize"
 #
 # App shortcuts
 #
-    bindsym $mod+n exec thunar
     bindsym $mod+o exec firefox
 #
 # Screenshots
@@ -213,3 +214,6 @@ bindsym $mod+r mode "resize"
 # Keybindings List
 #
     bindsym $mod+t exec xed ~/.config/sway/cheatsheet
+
+for_window [title="^rangerKitty$"] floating enable, resize set width 50 ppt height 70 ppt
+bindsym $mod+n exec $term-float --title=rangerKitty ranger

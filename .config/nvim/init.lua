@@ -18,6 +18,7 @@ require('packer').startup(function()
   use 'vim-test/vim-test' -- unittests support
   use 'wbthomason/packer.nvim' -- Package manager
   use 'windwp/nvim-autopairs' -- quotes autocompletion
+  use 'rhysd/committia.vim'
 end)
 
 require'lspconfig'.pyright.setup{}
@@ -102,7 +103,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -217,6 +218,7 @@ vim.opt.foldenable = true
 
 vim.g.mapleader = ','
 vim.g.challenger_deep_termcolors = 256
+vim.g.python_highlight_all = 1
 
 vim.api.nvim_set_keymap('n', '<M-l>', '<cmd>bn<cr>', {noremap=true})
 vim.api.nvim_set_keymap('n', '<M-h>', '<cmd>bp<cr>', {noremap=true})
