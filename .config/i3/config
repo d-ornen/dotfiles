@@ -187,5 +187,4 @@ bar {
 
 bindsym $mod+n exec $term-float --title=rangerKitty ranger
 bindsym $mod+o exec firefox
-bindsym $mod+k exec keepass
-bindsym $mod+n exec kitty ranger
+bindsym $mod+n exec "kitty ranger"
