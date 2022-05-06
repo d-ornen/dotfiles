@@ -185,6 +185,5 @@ bar {
         status_command i3status
 }
 
-bindsym $mod+n exec $term-float --title=rangerKitty ranger
+bindsym $mod+n exec kitty --title=rangerKitty ranger
 bindsym $mod+o exec firefox
-bindsym $mod+n exec "kitty ranger"

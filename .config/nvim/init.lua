@@ -22,7 +22,9 @@ require('packer').startup(function()
 end)
 
 require'lspconfig'.pyright.setup{}
+require'lspconfig'.ltex.setup{}
 require'nvim-autopairs'.setup{}
+
 
 require('lualine').setup {
   options = {
@@ -207,6 +209,7 @@ set path=$PWD/**
 set wildmenu
 set wildignore+=**/.git/**,**/__pycache__/**,**/venv/**,**/node_modules/**,**/dist/**,**/build/**,*.o,*.pyc,*.swp
 colorscheme molokai
+command! Wq wq
 ]]
 
 vim.opt.number = true
@@ -215,6 +218,7 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = true
+vim.opt.relativenumber = true
 
 vim.g.mapleader = ','
 vim.g.challenger_deep_termcolors = 256
@@ -229,3 +233,4 @@ vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
 vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
+
