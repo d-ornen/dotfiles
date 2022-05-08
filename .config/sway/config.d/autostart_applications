@@ -18,5 +18,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 # Welcome App
 exec dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
 
+exec nwg-wrapper -s date-wttr.sh -r 1800000 -c date-wttr.css -p left -a start -ml 20 -mt 20
+exec nwg-wrapper -s timezones.sh -r 1000 -c timezones.css -p right -mr 50 -a end -mt 50 -j right
 # Sway Fader
 # exec python3 ~/.config/sway/scripts/swayfader.py      
