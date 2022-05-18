@@ -26,8 +26,8 @@ for_window [shell="x_wayland"] title_format "%class - %title"
 
 # class                 border  bground text    indicator child_border
 client.focused          #948a84 #6c5e5e #F8F8F2 #544d4a   #948a84
-client.focused_inactive #44475A #6c5e5e #F8F8F2 #544d4a   #948a84
-client.unfocused        #948a84 #6c5e5e #BFBFBF #282A36   #282A36
+client.focused_inactive #44475A #6c5e5e #F8F8F2 #544d4a   #44475A
+client.unfocused        #44475A #6c5e5e #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #948a84 #6c5e5e #F8F8F2 #282A36   #282A36
 client.background       #6c5e5e
