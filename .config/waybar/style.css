@@ -16,6 +16,7 @@ Arc-Dark Color Scheme
 @define-color highlight #6c5e5e ;
 @define-color base1  #544d4a ;
 @define-color activeFont #a79f85 ;
+@define-color bordercolor #A79F85;
 
 @keyframes blink-warning {
     70% {
@@ -46,9 +47,8 @@ Arc-Dark Color Scheme
 /* Reset all styles */
 * {
     border: none;
-    border-radius: 0 0 15 15;
     min-height: 0;
-    margin: 0;
+    margin: -1px;
     padding: 0;
 }
 
@@ -57,8 +57,11 @@ Arc-Dark Color Scheme
     background: transparent;
     color: @activeFont;
     background-color: @base1;
-    font-family: UbuntuMono;
-    font-size: 14px;
+    border: 2 solid @highlight;
+    border-top: none;
+    border-radius: 0 0 5 5;
+    font-family: "bedstead semicondensed";
+    font-size: 13px;
 }
 
 /* Every modules */
@@ -76,8 +79,10 @@ Arc-Dark Color Scheme
 #tray,
 #idle_inhibitor,
 #custom-PBPbattery {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+    padding:0rem 0rem;
+    margin: 0px 0px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -88,6 +93,9 @@ Arc-Dark Color Scheme
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#tray{
 }
 
 #battery.warning {
@@ -146,6 +154,7 @@ Arc-Dark Color Scheme
     color: orange;
 }
 
+
 #pulseaudio {
     padding-top:6px;
 }
@@ -163,7 +172,8 @@ Arc-Dark Color Scheme
 }
 
 #workspaces {
-    font-size:13px;
+    padding-left: 10px;
+    font-size:10px;
 }
 
 #workspaces button {

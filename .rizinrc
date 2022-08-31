@@ -6,3 +6,4 @@
 (createScript name; #!pipe python /home/jus/git/r4ge/src/createScript.py $0)
 (callFunction retval; #!pipe python /home/jus/git/r4ge/src/callFunction.py $0)
 (dco offset; #!pipe python /home/jus/git/rizinScripts/breakPointOffset.py $0)
+(goto offset; #!pipe python /home/jus/git/rizinScripts/gotoOffset.py $0)
