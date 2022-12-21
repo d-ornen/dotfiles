@@ -31,7 +31,7 @@ ZSH_THEME=af-magic
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+CASE_SENSITIVE="false"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -113,3 +113,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# opam configuration
+[[ ! -r /home/jus/.opam/opam-init/init.zsh ]] || source /home/jus/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

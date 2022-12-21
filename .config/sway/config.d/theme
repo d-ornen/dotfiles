@@ -3,10 +3,10 @@
 #https://www.color-hex.com/color-palette/1012219 my color palette
 #https://www.color-hex.com/color-palette/53188
 #
-set $bg #121212 
-set $fg #b3b3b3 
+set $bg #44475a 
+set $fg #bd93f9 
 set $br #535353 
-set $ur #1db954 
+set $ur #f1fa8c 
 set $ia #212121 
 
 exec_always ~/.config/sway/scripts/import-gsettings
@@ -16,10 +16,10 @@ gaps inner 0
 gaps outer 0
 
 # Hide titlebar on windows:
-default_border pixel 2
+default_border pixel 1
 
 # Default Font
-font pango:Noto Sans Regular 10
+font pango:Fira Code mono 10
 
 # Thin borders:
 smart_borders on

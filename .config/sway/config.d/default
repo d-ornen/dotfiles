@@ -15,7 +15,7 @@ set $term-light sakura
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -c ~/.config/wofi/config -I
+set $menu 'rofi -combi-modi window,drun,ssh -theme solarized  -show combi ~/.config/rofi/config.rasi'
 
 set $powermenu ~/.config/waybar/scripts/power-menu.sh
 
@@ -209,11 +209,11 @@ bindsym $mod+r mode "resize"
 # Screenshots
 #
     bindsym print exec /usr/share/sway/scripts/grimshot --notify save output
-    bindsym Shift+print exec ~/.config/sway/scripts/screenshot.sh
+    bindsym Shift+print exec 'grim -g "$(slurp)" - | wl-copy'
 #
 # Keybindings List
 #
     bindsym $mod+t exec xed ~/.config/sway/cheatsheet
 
-for_window [title="^rangerKitty$"] floating enable, resize set width 50 ppt height 70 ppt
-bindsym $mod+n exec $term-float --title=rangerKitty ranger
+for_window [title="^nnn$"] floating enable, resize set width 50 ppt height 70 ppt
+bindsym $mod+n exec $term-float --title=nnn nnn

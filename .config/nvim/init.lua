@@ -5,13 +5,17 @@ require('packer').startup(function()
 use 'morhetz/gruvbox' -- gruvbox colorscheme
 use 'ayu-theme/ayu-vim' -- ayu colorscheme
 use 'tomasr/molokai' -- molokai colorscheme
+use 'rose-pine/neovim'
+use 'dracula/vim'
+
+--(Syntax highlighting)
+--use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
 --(Autocompletion)
 use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
 use 'hrsh7th/nvim-cmp' -- a completion plugin for neovim coded in lua
-use {'hrsh7th/cmp-nvim-lsp', after="nvim-cmp"} -- completion support for lsp
-use {'hrsh7th/cmp-cmdline', after="nvim-cmp"} -- completion in cmdline
-use {'saadparwaiz1/cmp_luasnip', after="nvim-cmp"} -- luasnip completion source
+use 'hrsh7th/cmp-nvim-lsp' -- completion support for lsp
+use 'saadparwaiz1/cmp_luasnip' -- luasnip completion source
 use 'onsails/lspkind.nvim' -- fancy incons for nvim lsp
 
 --(Snippets)
@@ -24,6 +28,9 @@ use 'lervag/vimtex'
 --(Git)
 use 'airblade/vim-gitgutter' -- git integration
 use 'rhysd/committia.vim' -- neat commit message editor layout
+
+-- (Build system support)
+use 'johnsyweb/vim-makeshift'
 
 
 --(Package management)
