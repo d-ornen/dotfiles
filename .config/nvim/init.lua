@@ -42,6 +42,9 @@ use 'rickhowe/diffchar.vim' -- modify diffing capabilities
 use 'Yggdroot/indentLine' -- show how much tabs were used 
 use 'windwp/nvim-autopairs' -- quotes autocompletion
 use 'vim-test/vim-test' -- unittests support for several languages
+use 'tomtom/tcomment_vim'
+use 'luochen1990/rainbow'
+
 end)
 
 require "core.themes"

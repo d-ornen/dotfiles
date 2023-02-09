@@ -4,6 +4,7 @@ require "lspconfig".ltex.setup{}
 require "lspconfig".rust_analyzer.setup{}
 require'lspconfig'.ocamllsp.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.ansiblels.setup{}
 
 local luasnip = require'luasnip'
 local lspconfig = require('lspconfig')
@@ -136,3 +137,4 @@ cmp.setup {
 }
 
 
+vim.g.rainbow_active = 1
