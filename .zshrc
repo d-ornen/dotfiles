@@ -7,14 +7,28 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 alias ft="grep -rnw './' -e $1"
 
-sshAgentClients=`pidof ssh-agent|wc -w`
-if [[ $sshAgentClients -eq 0 ]]; then
-    eval `ssh-agent`
-    export -p SSH_AUTH_SOCK SSH_AGENT_PID > /tmp/.ssh_agent_session
-    ssh-add ~/Documents/ssh/*
-else
-    . /tmp/.ssh_agent_session
+env=~/.ssh/agent.env
+
+agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+agent_start () {
+    (umask 077; ssh-agent >| "$env")
+    . "$env" >| /dev/null ; }
+
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    agent_start
+    ssh-add
+elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+    ssh-add
 fi
+
+unset env
+
 
 export LS_COLORS='di=34:ln=36:pi=35:so=33:or=41:ex=32:*.tar=31:*.mkv=31:*.mp4=31:*.key=33:*.key.pub=35:*.zip=31:*.7z=31:*.jar=35:*.class=35:*.iso=96:*.pdf=32:*.deb=33:*.jpg=35:*.png=35:*.odt=32:*.rzdb=35:*.xlsx=32:*.xcf=32:*.html=32:*.apk=31:*.jadx=35:*.tox=36:*.ods=32:*.uxf=32'
 
