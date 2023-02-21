@@ -206,15 +206,15 @@
         "tooltip": false
     },
 
-    "custom/launcher": {
-        "format":" ",
-        "on-click": "exec wofi -c ~/.config/wofi/config -I",
-        "tooltip": false,
-    },
+    /* "custom/launcher": { */
+    /*     "format":" ", */
+    /*     "on-click": "exec wofi -c ~/.config/wofi/config -I", */
+    /*     "tooltip": false, */
+    /* }, */
 
-    "custom/power": {
-        "format":"⏻",
-        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
-        "tooltip": false,
-    },
+    /* "custom/power": { */
+    /*     "format":"⏻", */
+    /*     "on-click": "exec ~/.config/waybar/scripts/power-menu.sh", */
+    /*     "tooltip": false, */
+    /* }, */
 }

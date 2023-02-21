@@ -22,7 +22,7 @@ export LS_COLORS='di=34:ln=36:pi=35:so=33:or=41:ex=32:*.tar=31:*.mkv=31:*.mp4=31
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=af-magic
+ZSH_THEME=muse
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

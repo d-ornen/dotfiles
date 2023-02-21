@@ -63,7 +63,7 @@
     border-top: none;
     border-radius: 0 0 0 0;
     font-family: "Fira Code mono";
-    font-size: 13px;
+    font-size: 14px;
 }
 
 /* Every modules */
@@ -150,7 +150,7 @@
 
 #mode {
     background: @c_base2;
-    border-bottom: 3px transparent;
+    /* border-bottom: 3px transparent; */
     color:white;
     margin-left: 5px;
     padding:7;
@@ -183,20 +183,20 @@
 }
 
 #workspaces button {
-    border-left: 3px solid @c_bordercolor;
-    margin-bottom: 0px;
-    color: @c_foreground;
+    /* border-left: 3px solid @c_bordercolor; */
+    /* margin-bottom: 0px; */
+    /* color: @c_foreground; */
     padding:0px;
 }
 
 #workspaces button.focused {
-    border-left: 3px solid  @c_info;
+    /* border-left: 3px solid  @c_info; */
     margin-bottom: 1px;
     padding-left:0;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
+    /* border-color: #c9545d; */
     color: #c9545d;
 }
 
