@@ -1,5 +1,5 @@
 #automount
-exec udiskie
+exec udiskie -t
 exec gammastep
 # Auth with polkit-gnome:
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
