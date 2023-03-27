@@ -15,7 +15,7 @@ set $term-light sakura
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu 'rofi -combi-modi window,drun,ssh -theme solarized  -show combi ~/.config/rofi/config.rasi'
+set $menu 'wofi --run'
 
 set $powermenu ~/.config/waybar/scripts/power-menu.sh
 

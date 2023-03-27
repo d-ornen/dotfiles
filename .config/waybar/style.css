@@ -1,218 +1,46 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
-
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-/*dracula theme*/
-
-@define-color c_reserved_background #282a36;
-@define-color c_background #44475a;
-@define-color c_base2 #bd93f9; /*purple*/
-@define-color c_foreground #f8f8f2;
-@define-color c_bordercolor #6272a4;
-@define-color c_info #f1fa8c;
-@define-color c_warning #ff5555;
-
-
-@keyframes blink-warning {
-    70% {
-        color: @c_foreground;
-    }
-
-    to {
-        color: @c_foreground;
-        background-color: @c_info;
-    }
-}
-
-@keyframes blink-critical {
-    70% {
-      color: @c_foreground;
-    }
-
-    to {
-        color: @c_foreground;
-        background-color: @c_warning;
-    }
-}
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
-
-/* Reset all styles */
 * {
-    border: none;
-    min-height: 0;
-    margin: 0px;
-    padding: 0;
+	border: none;
+	border-radius: 0;
+	font-family: 'Font Awesome 5 Free', 'Noto Sans';
+	font-size: 16px;
+	font-weight: bold;
+	min-height: 0;
 }
 
-/* The whole bar */
 #waybar {
-    background: transparent;
-    color: @c_foreground;
-    background-color: @c_background;
-    border: 0 solid @c_bordercolor;
-    border-top: none;
-    border-radius: 0 0 0 0;
-    font-family: "Fira Code mono";
-    font-size: 14px;
-}
-
-/* Every modules */
-#battery,
-#clock,
-#backlight,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#mode,
-#custom-weather,
-#network,
-#pulseaudio,
-#temperature,
-#tray,
-#idle_inhibitor,
-#custom-PBPbattery {
-    padding:0rem 0rem;
-    margin: 0px 0px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-color: @c_base2 ;
-    border-left: 1px;
-    border-right: 1;
-
-}
-
-/* -----------------------------------------------------------------------------
- * Modules styles
- * -------------------------------------------------------------------------- */
-
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#tray{
-}
-
-#battery.warning {
-    color: @c_info;
-}
-
-#battery.critical {
-    color: @c_warning;
-}
-
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#cpu.warning {
-    color: @c_info;
-}
-
-#cpu.critical {
-    color: @c_warning;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: @c_info;
- }
-
-#memory.critical {
-    color: @c_warning;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
-}
-
-#mode {
-    background: @c_base2;
-    /* border-bottom: 3px transparent; */
-    color:white;
-    margin-left: 5px;
-    padding:7;
-}
-
-#network.disconnected {
-    color: @c_info;
-}
-
-
-#pulseaudio {
-    padding-top:0px;
-}
-
-#pulseaudio.muted {
-    color: @highlight;
-}
-
-#temperature.critical {
-    color: @c_warning;
-}
-
-#window {
-    font-weight: bold;
-}
-
-#workspaces {
-    padding-left: 10px;
-    font-size:10px;
+	background-color: #191818;
+	transition-duration: .5s;
 }
 
 #workspaces button {
-    /* border-left: 3px solid @c_bordercolor; */
-    /* margin-bottom: 0px; */
-    /* color: @c_foreground; */
-    padding:0px;
+	padding: 0 12px;
+	color: #d2d2d2;
+}
+
+#workspaces button:hover {
+	background-color: #191818;
+	color: #bf5151;
+	border-bottom:4px solid #bf5151;
 }
 
 #workspaces button.focused {
-    /* border-left: 3px solid  @c_info; */
-    margin-bottom: 1px;
-    padding-left:0;
+	color: #d2d2d2;
+	border-bottom:4px solid #d2d2d2;
 }
 
 #workspaces button.urgent {
-    /* border-color: #c9545d; */
-    color: #c9545d;
+	background-color: #bf5151;
+	border-bottom:4px solid #191818;
+	color: #191818;
 }
 
-#custom-power {
-    margin-left:15px;
-    margin-right:15px;
-    font-size:15px;
+#mode, #window {
+	color: #d2d2d2;
 }
 
-#custom-launcher {
-    font-size:15px;
-    margin-left:15px;
-    margin-right:10px;
+#tray, #pipewire, #network, #backlight, #battery, #clock {
+	padding: 0 12px;
+	color: #d2d2d2;
 }
 
-#backlight.icon {
-    padding-right:1px;
-    font-size: 13px;
-}
+
