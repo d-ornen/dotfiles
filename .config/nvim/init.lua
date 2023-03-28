@@ -15,12 +15,12 @@ use 'dracula/vim'
 use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
 use 'hrsh7th/nvim-cmp' -- a completion plugin for neovim coded in lua
 use 'hrsh7th/cmp-nvim-lsp' -- completion support for lsp
-use 'saadparwaiz1/cmp_luasnip' -- luasnip completion source
+-- use 'saadparwaiz1/cmp_luasnip' -- luasnip completion source
 use 'onsails/lspkind.nvim' -- fancy incons for nvim lsp
 
 --(Snippets)
-use 'L3MON4D3/LuaSnip' -- snippets engine
-use 'rafamadriz/friendly-snippets'
+-- use 'L3MON4D3/LuaSnip' -- snippets engine
+-- use 'rafamadriz/friendly-snippets'
 
 --(Latex)
 use 'lervag/vimtex'
@@ -44,8 +44,10 @@ use 'windwp/nvim-autopairs' -- quotes autocompletion
 use 'vim-test/vim-test' -- unittests support for several languages
 use 'tomtom/tcomment_vim'
 use 'luochen1990/rainbow'
+-- use 'ja-ford/delaytrain.nvim'
 
 end)
+--require'delaytrain'.setup()
 
 require "core.themes"
 require "core.options"
