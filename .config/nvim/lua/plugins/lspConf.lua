@@ -1,5 +1,5 @@
 require "lspconfig".cmake.setup{}
-require "lspconfig".pyright.setup{}
+-- require "lspconfig".pyright.setup{}
 require "lspconfig".ltex.setup{}
 require "lspconfig".rust_analyzer.setup{}
 require'lspconfig'.ocamllsp.setup{}
@@ -38,7 +38,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'cmake', 'ocamllsp', 'gopls'}
+local servers = { 'clangd', 'rust_analyzer', 'cmake', 'ocamllsp', 'gopls'}
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
@@ -132,7 +132,7 @@ cmp.setup {
     }),
     sources = {
       { name = 'nvim_lsp' },
-        -- { name = 'luasnip' },
+        { name = 'luasnip' },
     },
 }
 

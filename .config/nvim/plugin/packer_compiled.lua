@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/jus/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colors-tone"] = {
+    loaded = true,
+    path = "/home/jus/.local/share/nvim/site/pack/packer/start/nvim-colors-tone",
+    url = "https://github.com/cseelus/nvim-colors-tone"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/jus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",

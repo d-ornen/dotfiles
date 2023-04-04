@@ -1,2 +1,2 @@
-vim.cmd "colorscheme ayu"
+vim.cmd "colorscheme habamax"
 vim.g.ayucolor = "dark"
