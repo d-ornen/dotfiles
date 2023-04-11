@@ -54,3 +54,5 @@ require "core.cmds"
 require "core.globals"
 require "core.keymaps"
 require "plugins" -- all plugins configurations start here
+vim.g.vimtex_view_method = "mupdf"
+vim.g.vimtex_view_general_options = [[--synctex-forward @line:@col:@pdf -- @tex]]

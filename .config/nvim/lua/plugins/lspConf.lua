@@ -1,5 +1,5 @@
 require "lspconfig".cmake.setup{}
--- require "lspconfig".pyright.setup{}
+require "lspconfig".pyright.setup{}
 require "lspconfig".ltex.setup{}
 require "lspconfig".rust_analyzer.setup{}
 require'lspconfig'.ocamllsp.setup{}
