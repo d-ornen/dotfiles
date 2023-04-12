@@ -215,5 +215,8 @@ bindsym $mod+r mode "resize"
 #
     bindsym $mod+t exec xed ~/.config/sway/cheatsheet
 
-for_window [title="^nnn$"] floating enable, resize set width 50 ppt height 70 ppt
+for_window [title="nnn"] floating enable, resize set width 50 ppt height 70 ppt
 bindsym $mod+n exec $term-float --title=nnn nnn
+
+for_window [app_id="qbittorrent"] floating enable
+for_window [title="^OpenSnitch Network Statistics.*"] floating enable, move position 0px -1px

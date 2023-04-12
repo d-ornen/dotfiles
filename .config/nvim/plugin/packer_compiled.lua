@@ -179,11 +179,6 @@ _G.packer_plugins = {
     path = "/home/jus/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
-  ["vim-makeshift"] = {
-    loaded = true,
-    path = "/home/jus/.local/share/nvim/site/pack/packer/start/vim-makeshift",
-    url = "https://github.com/johnsyweb/vim-makeshift"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/jus/.local/share/nvim/site/pack/packer/start/vim-surround",

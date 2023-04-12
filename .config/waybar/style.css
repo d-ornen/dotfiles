@@ -38,7 +38,7 @@
 	color: #d2d2d2;
 }
 
-#tray, #pipewire, #network, #backlight, #battery, #clock {
+#tray, #custom-pomodoro, #custom-pulseaudio, #pipewire, #network, #backlight, #battery, #clock {
 	padding: 0 12px;
 	color: #d2d2d2;
 }

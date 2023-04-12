@@ -2,6 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+mkcd (){
+  mkdir -p $1 && cd $1
+}
 export ZSH="$HOME/.oh-my-zsh"
 
 export EDITOR=nvim

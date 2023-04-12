@@ -4,7 +4,7 @@
     "position":"top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "network", "custom/pipewire", "backlight", "battery", "clock"],
+    "modules-right": ["tray", "network", "custom/pulseaudio", "backlight", "battery", "clock", "custom/pomodoro"],
 
     "sway/workspaces": {
       "all-outputs": true,
@@ -61,26 +61,12 @@
       "format-linked": "{ifname} (No IP)  ",
       "format-disconnected": "Disconnected ⚠ ",
     },
-    "custom/pipewire": {
-      "format": "{volume}% {icon}",
-      "return-type": "json",
-      "signal": 8,
-      "interval": "once",
-      "format-bluetooth": "{volume}% {icon} {format_source}",
-      "format-bluetooth-muted": " {icon} {format_source}",
-      "format-muted": " {format_source}",
+    "custom/pulseaudio": {
+      "format": " {}",
+      "interval": 10,
       "on-click": "pavucontrol",
-      "on-scroll-up": "pw-volume change +1%",
-      "on-scroll-down": "pw-volume change -1%",
-      "exec": "pw-volume status",
-      "format-icons": {
-        "headphone": " ",
-        "hands-free": " ",
-        "headset": " ",
-        "phone": " ",
-        "portable": " ",
-        "car": " ",
-        "default": [" ", " ", " "]
-      }
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+      "exec": "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | sed 's/%//'"
     },
 }

@@ -7,3 +7,34 @@ term=kitty
 hide_scroll=true
 location=2
 yoffset=300
+exec-search=false
+# Set the colors
+background-color=#282a36
+border-color=#bd93f9
+text-color=#f8f8f2
+selected-background-color=#44475a
+selected-text-color=#f8f8f2
+
+# Set the font
+font="Fira Code 12"
+
+# Set the window size and position
+width=50%
+height=50%
+x-offset=25%
+y-offset=25%
+
+# Set the border size
+border-size=2
+
+# Set the padding and spacing
+padding=10
+spacing=10
+
+# Set the scrollbar style
+scrollbar=true
+scrollbar-color=#bd93f9
+scrollbar-width=10
+
+# Set the mode to drun (desktop application launcher)
+mode=drun
