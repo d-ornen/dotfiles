@@ -1,6 +1,9 @@
 #automount
 exec udiskie -t
 exec gammastep
+exec pomodoro
+exec opensnitch-ui
+exec noisetorch
 # Auth with polkit-gnome:
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
