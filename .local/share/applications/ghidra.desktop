@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+version=1.0
+Name=ghidra
+Comment=Reverse engineering framework
+Path=/usr/bin
+Exec=ghidra
+Terminal=false
+Categories=Programming;
