@@ -39,8 +39,8 @@
     "backlight": {
       "format": "{percent}% {icon}",
       "format-icons": [" ", " "],
-      "on-scroll-up": "xbacklight -inc 5",
-      "on-scroll-down": "xbacklight -dec 5",
+      "on-scroll-up": "brightnessctl s +5%",
+      "on-scroll-down": "brightnessctl s 5%-",
     },
 
     "battery": {

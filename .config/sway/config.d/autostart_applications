@@ -4,6 +4,7 @@ exec gammastep
 exec pomodoro
 exec opensnitch-ui
 exec noisetorch
+exec wmname LG3D
 # Auth with polkit-gnome:
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
