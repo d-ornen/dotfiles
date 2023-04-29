@@ -5,11 +5,11 @@ indicator-caps-lock
 # datestr=%A
 image=$HOME/.config/sway/swaylock.png
 scaling=fill
-font=UbuntuMono
+font=FiraCode
 font-size=20
 
 # Ring
-indicator-radius=115
+indicator-radius=80
 # line-uses-ring
 line-color=#3b4252
 text-color=#d8dee9
@@ -22,3 +22,6 @@ key-hl-color=#5e81ac
 separator-color=#4c566a
 layout-text-color=#eceff4
 line-wrong-color=#d08770
+effect-greyscale
+# screenshots
+fade-in=1

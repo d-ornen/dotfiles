@@ -5,9 +5,10 @@
 # Put your touchpad's ID to replace "Touchpad-ID" (keep the quotation marks)
 
 input type:touchpad {
-    dwt enabled
-    tap enabled
-    natural_scroll enabled
+    events disabled
+    # dwt enabled
+    # tap enabled
+    # natural_scroll enabled
 }
 
 # Read `man 5 sway-input` for more information about this section.
@@ -22,7 +23,5 @@ input type:touchpad {
 input type:keyboard {
     xkb_layout us,pl,no,ru
     xkb_variant nodeadkeys
-    xkb_options grp:toggle
+    xkb_options grp:rctrl_toggle
 }
-
-

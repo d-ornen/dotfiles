@@ -4,7 +4,7 @@
     "position":"top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "network", "custom/pulseaudio", "backlight", "battery", "clock", "custom/pomodoro"],
+    "modules-right": ["tray", "network", "custom/pulseaudio", "backlight","sway/language", "battery", "clock"],
 
     "sway/workspaces": {
       "all-outputs": true,

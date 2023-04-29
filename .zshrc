@@ -138,3 +138,4 @@ fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:"$PATH
+alias nvim="nvim +PackerSync"

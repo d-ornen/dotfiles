@@ -21,16 +21,16 @@ set $powermenu ~/.config/waybar/scripts/power-menu.sh
 
 ### Idle configuration
 exec swayidle -w\
-    timeout 1070 'swaylock -f -C ~/.config/swaylock/config'\
+    timeout 1070 'swaylock --screenshots --clock --fade-in 1 --effect-greyscale'\
     timeout 770 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -C ~/.config/swaylock/config'
+    before-sleep 'swaylock --screenshots --clock --fade-in 1 --effect-greyscale'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ## Lock Screen
-    bindsym $mod+f1 exec ~/.config/sway/scripts/lockman.sh
+    bindsym $mod+Shift+o exec ~/.config/sway/scripts/lockman.sh
 
 ### Key bindings
 #
@@ -40,7 +40,7 @@ exec swayidle -w\
     bindsym $mod+Return exec $term-float
 
     # Open the power menu
-    bindsym $mod+Shift+e exec $powermenu
+    # bindsym $mod+Shift+e exec $powermenu
 
     # Kill focused window
     bindsym $mod+q kill
@@ -220,3 +220,4 @@ bindsym $mod+n exec $term-float --title=nnn nnn
 
 for_window [app_id="qbittorrent"] floating enable
 for_window [title="^OpenSnitch Network Statistics.*"] floating enable, move position 0px -1px
+bindsym $mod+Shift+t exec swaymsg input "type:touchpad" events toggle
