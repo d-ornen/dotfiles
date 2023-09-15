@@ -6,9 +6,13 @@
 
 input type:touchpad {
     events disabled
-    # dwt enabled
-    # tap enabled
-    # natural_scroll enabled
+     dwt enabled
+     tap enabled
+     drag enabled
+     natural_scroll enabled
+     scroll_method edge
+     tap_button_map lrm
+     scroll_factor 0.15
 }
 
 # Read `man 5 sway-input` for more information about this section.
