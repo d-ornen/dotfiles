@@ -1,6 +1,7 @@
 -- convert all buffers to tabs
-use = require('packer').use
+vim.g.loaded_matchparen = 1
 
+use = require('packer').use
 require('packer').startup(function()
   --Plugins list
   --(Colorschemes)
@@ -45,10 +46,13 @@ require('packer').startup(function()
   use 'rickhowe/diffchar.vim' -- modify diffing capabilities
   use 'Yggdroot/indentLine' -- show how much tabs were used 
   use 'windwp/nvim-autopairs' -- quotes autocompletion
-  use 'vim-test/vim-test' -- unittests support for several languages
+  use 'vim-test/vim-test' -- unittests support for several languages -- do wyjebania
+  use 'BurntSushi/ripgrep' -- ripgrep support
   use 'tomtom/tcomment_vim'
   use 'luochen1990/rainbow'
   use 'chentoast/marks.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-lua/plenary.nvim' -- do wyjebania
 
 end)
 --load plugins with empty setup here, other load based on preferences
@@ -62,7 +66,7 @@ vim.o.termguicolors=true
 vim.o.background='dark'
 vim.o.relativenumber = true
 vim.o.foldenable = true
-vim.o.foldmethod = 'indent'
+vim.o.foldmethod = 'manual'
 vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
@@ -114,6 +118,10 @@ vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
+vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
+vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
+vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 
 --Set language lsp
 local servers = { 'clangd', 'zls', 'rust_analyzer', 'ltex', 'pyright', 'ocamllsp', 'gopls'}
