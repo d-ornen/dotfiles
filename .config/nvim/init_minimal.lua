@@ -79,108 +79,24 @@ vim.api.nvim_set_keymap('n', '<S-M-h>', '<cmd>-tabmove<cr>', opts)
 vim.api.nvim_set_keymap('t', '<M-h>', '<cmd>tabprev<cr>', opts)
 vim.api.nvim_set_keymap('t', '<M-l>', '<cmd>tabnext<cr>', opts)
 vim.api.nvim_set_keymap('i', '<C-k>', '<esc>o', opts)
-vim.api.nvim_set_keymap('n', '<C-e>', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'vr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'sr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'fm', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-
 
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
--- vim.api.nvim_set_keymap('n', '', '<cmd>!go run main.go<cr>', opts)
 
 vim.api.nvim_set_keymap('n', '<M-h>', '<esc>hi', opts)
 vim.api.nvim_set_keymap('n', '<M-j>', '<esc>ji', opts)
 vim.api.nvim_set_keymap('n', '<M-k>', '<esc>ki', opts)
 vim.api.nvim_set_keymap('n', '<M-l>', '<esc>li', opts)
 
---Set language lsp
-local servers = { 'clangd', 'zls', 'rust_analyzer', 'ltex', 'pyright', 'ocamllsp', 'gopls'}
-
-local lspconfig = require('lspconfig')
--- require'lspconfig'.tsserver.setup{}
---enable nvim-cmp additionsl capabilities and set up servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-for _, lsp in ipairs(servers) do
-   lspconfig[lsp].setup {
-       -- on_attach = my_custom_on_attach,
-       capabilities = capabilities,
-   }
-end
-local luasnip = require'luasnip'
-local cmp = require 'cmp'
-local lspkind = require "lspkind"
 
 local t = function(str)
    return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-_G.tab_complete = function()
-   if luasnip and luasnip.expand_or_jumpable() then
-       return t("<Plug>luasnip-expand-or-jump")
-   else
-       return t "<Tab>"
-     end
- end
-_G.s_tab_complete = function()
-   if luasnip and luasnip.jumpable(-1) then
-       return t("<Plug>luasnip-jump-prev")
-   else
-       return t "<S-Tab>"
-   end
-end
 
-cmp.setup {
-   formatting = {
-       format = lspkind.cmp_format({
-           mode = 'symbol', -- show only symbol annotations
-           maxwidth = 75, 
-           before = function (entry, vim_item)
-             if entry.kind == "Keyword" then
-               return false
-             end
-             return vim_item
-             end
-       })
-   },
 
-   snippet = {
-       expand = function(args)
-           luasnip.lsp_expand(args.body)
-       end,
-   },
-   mapping = cmp.mapping.preset.insert({
-       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-       ['<C-f>'] = cmp.mapping.scroll_docs(4),
-       ['<C-Space>'] = cmp.mapping.complete(),
-       ['<C-j>'] = cmp.mapping.confirm {
-           behavior = cmp.ConfirmBehavior.Replace,
-           select = true,
-       },
-   }),
-   sources = {
-     { name = 'nvim_lsp', weight = 1 },
-     { name = 'luasnip', weight = 2 },
-   },
-}
-
-require("luasnip.loaders.from_vscode").lazy_load()
-
-vim.api.nvim_exec([[let g:makeshift_systems = {'Cargo.toml':'cargo'} ]], true)
 
 require'marks'.setup {
   -- whether to map keybinds or not. default true
