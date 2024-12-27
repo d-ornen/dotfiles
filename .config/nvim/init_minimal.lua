@@ -16,43 +16,21 @@ require('packer').startup(function()
   --(Syntax highlighting)
   use 'nvim-treesitter/nvim-treesitter'
 
-  --(Autocompletion) 
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
-  use 'hrsh7th/nvim-cmp' -- a completion plugin for neovim coded in lua
-  use 'hrsh7th/cmp-nvim-lsp' -- completion support for lsp
-  use 'saadparwaiz1/cmp_luasnip' -- luasnip completion source
-  use 'onsails/lspkind.nvim' -- fancy incons for nvim lsp
-
-  --(Snippets)
-  -- use 'L3MON4D3/LuaSnip' -- snippets engine
-  -- use 'rafamadriz/friendly-snippets'
-
-  --(Latex)
-  -- use 'lervag/vimtex'
-
-  --(Git)
-  use 'airblade/vim-gitgutter' -- git integration
-  use 'rhysd/committia.vim' -- neat commit message editor layout
-
-  -- (Build system support)
-  use 'johnsyweb/vim-makeshift'
-
-
   --(Package management)
   use 'wbthomason/packer.nvim' -- Package manager
 
   --(Without category)
   use 'tpope/vim-surround'
-  use 'rickhowe/diffchar.vim' -- modify diffing capabilities
   use 'Yggdroot/indentLine' -- show how much tabs were used 
   use 'windwp/nvim-autopairs' -- quotes autocompletion
-  use 'vim-test/vim-test' -- unittests support for several languages -- do wyjebania
-  use 'BurntSushi/ripgrep' -- ripgrep support
   use 'tomtom/tcomment_vim'
   use 'luochen1990/rainbow'
   use 'chentoast/marks.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-lua/plenary.nvim' -- do wyjebania
+  use {
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+
 
 end)
 --load plugins with empty setup here, other load based on preferences
@@ -93,7 +71,7 @@ vim.cmd "command! Wq wq"
 --Set keymaps
 local opts = { noremap=true, silent=true }
 -- how do we move tabs
-vim.api.nvim_set_keymap('n', '<M-l>', '<cmd>tabnext<cr>', opts)
+vim.api.nvim_set_keymap('n', 'M-l', '<cmd>tabnext<cr>', opts)
 vim.api.nvim_set_keymap('n', '<M-h>', '<cmd>tabprev<cr>', opts)
 vim.api.nvim_set_keymap('n', '<S-M-l>', '<cmd>+tabmove<cr>', opts)
 vim.api.nvim_set_keymap('n', '<S-M-h>', '<cmd>-tabmove<cr>', opts)
@@ -238,7 +216,6 @@ require'marks'.setup {
   },
   mappings = {}
 }
-vim.g.vimtex_view_method = 'mupdf'
 
 -- oneliner to iterate over colorschemes with f2, f3
 local color_schemes = vim.fn.getcompletion('', 'color'); local current_index = 1; local function set_colorscheme(index) current_index = index; vim.cmd('colorscheme ' .. color_schemes[current_index]) end; local function next_colorscheme() local next_index = current_index + 1; if next_index > #color_schemes then next_index = 1 end; set_colorscheme(next_index) end; local function prev_colorscheme() local prev_index = current_index - 1; if prev_index < 1 then prev_index = #color_schemes end; set_colorscheme(prev_index) end; _G.next_colorscheme = next_colorscheme; _G.prev_colorscheme = prev_colorscheme; vim.api.nvim_set_keymap('n', '<F2>', '<Cmd>lua prev_colorscheme()<CR>', { noremap = true }); vim.api.nvim_set_keymap('n', '<F3>', '<Cmd>lua next_colorscheme()<CR>', { noremap = true })
