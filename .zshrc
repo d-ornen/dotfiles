@@ -102,3 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH=$PATH:/home/jus/.local/bin/
+export PATH=$PATH:/var/lib/snapd/snap/bin
+export PATH=$PATH:/home/jus/.local/share/gem/ruby/3.3.0/bin/

@@ -124,10 +124,10 @@ vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 -- vim.api.nvim_set_keymap('n', '', '<cmd>!go run main.go<cr>', opts)
 
-vim.api.nvim_set_keymap('n', '<M-h>', '<esc>hi', opts)
-vim.api.nvim_set_keymap('n', '<M-j>', '<esc>ji', opts)
-vim.api.nvim_set_keymap('n', '<M-k>', '<esc>ki', opts)
-vim.api.nvim_set_keymap('n', '<M-l>', '<esc>li', opts)
+-- vim.api.nvim_set_keymap('n', '<M-h>', '<esc>hi', opts)
+-- vim.api.nvim_set_keymap('n', '<M-j>', '<esc>ji', opts)
+-- vim.api.nvim_set_keymap('n', '<M-k>', '<esc>ki', opts)
+-- vim.api.nvim_set_keymap('n', '<M-l>', '<esc>li', opts)
 
 --Set language lsp
 local servers = { 'clangd', 'zls', 'rust_analyzer', 'ltex', 'pyright', 'ocamllsp', 'gopls'}
